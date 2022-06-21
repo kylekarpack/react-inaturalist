@@ -1,11 +1,13 @@
 import React from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 import { Observations } from "../src/index";
 
-render(
+const container = document.getElementById("home");
+const root = createRoot(container);
+
+root.render(
   <div>
     <h1>React iNaturalist Demo Page</h1>
     <Observations />
-  </div>,
-  document.getElementById("home")
+  </div>
 );
