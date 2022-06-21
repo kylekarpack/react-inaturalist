@@ -1,0 +1,22 @@
+{
+  "name": "react-inaturalist",
+  "version": "1.0.0",
+  "description": "Display observations from iNaturalist",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kylekarpack/react-inaturalist.git"
+  },
+  "keywords": [
+    "inaturalist"
+  ],
+  "author": "kylekarpack+inaturalist@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kylekarpack/react-inaturalist/issues"
+  },
+  "homepage": "https://github.com/kylekarpack/react-inaturalist#readme"
+}
