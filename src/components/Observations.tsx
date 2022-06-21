@@ -1,5 +1,6 @@
 import { FunctionComponent, useEffect, useState } from "react";
 import { INaturalistApiResponse, Taxon } from "../types/inaturalist";
+import { Observation } from "./Observation";
 
 export const Observations: FunctionComponent = () => {
   const [observedSpecies, setObservedSpecies] = useState<Taxon[]>([]);
@@ -15,5 +16,12 @@ export const Observations: FunctionComponent = () => {
     })();
   }, []);
 
-  return <>Found: {JSON.stringify(observedSpecies, null, 4)}</>;
+  return (
+    <>
+      Recently Observed Species:{" "}
+      {observedSpecies.map((el) => {
+        return <Observation key={el.id} species={el} />;
+      })}
+    </>
+  );
 };
