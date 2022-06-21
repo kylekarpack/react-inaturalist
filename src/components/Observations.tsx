@@ -2,7 +2,7 @@ import { FunctionComponent, useEffect, useState } from "react";
 import { INaturalistApiResponse, Taxon } from "../types/inaturalist";
 
 export const Observations: FunctionComponent = () => {
-  const [observedSpecies, setObservedSpecies] = useState<Taxon[]>(null);
+  const [observedSpecies, setObservedSpecies] = useState<Taxon[]>([]);
 
   useEffect(() => {
     (async function () {
