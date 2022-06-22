@@ -9,7 +9,7 @@ export const Observations: FunctionComponent = () => {
   useEffect(() => {
     (async function () {
       const response = await fetch(
-        "https://api.inaturalist.org/v1/observations/species_counts?verifiable=any&user_id=kkarpack&order_by=created_at&locale=en-US&preferred_place_id=1&per_page=50"
+        "https://api.inaturalist.org/v1/observations?verifiable=any&user_id=kkarpack&order_by=created_at&locale=en-US&preferred_place_id=1&per_page=50"
       );
       const data: INaturalistApiResponse = await response.json();
 
@@ -18,13 +18,10 @@ export const Observations: FunctionComponent = () => {
   }, []);
 
   return (
-    <>
-      Recently Observed Species:{" "}
-      <div className={styles.observations}>
-        {observedSpecies.map((el) => {
-          return <Observation key={el.id} species={el} />;
-        })}
-      </div>
-    </>
+    <div className={styles.observations}>
+      {observedSpecies.map((el) => {
+        return <Observation key={el.id} species={el} />;
+      })}
+    </div>
   );
 };

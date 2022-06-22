@@ -1,6 +1,6 @@
 .observations {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 200px);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-column-gap: 1em;
   grid-row-gap: 1em;
 }
