@@ -1,25 +1,23 @@
-import { FunctionComponent, useEffect, useState } from "react";
-import { INaturalistApiResponse, Taxon } from "../types/inaturalist";
+import { FunctionComponent } from "react";
+import useINaturalistApi from "../hooks/useINaturalistApi";
+import { Props } from "../types/props";
 import { Observation } from "./Observation";
 import styles from "./Observations.module.css";
 
-export const Observations: FunctionComponent = () => {
-  const [observedSpecies, setObservedSpecies] = useState<Taxon[]>([]);
+export const Observations: FunctionComponent<Props> = (props) => {
+  const { loading, observations, error } = useINaturalistApi(props);
 
-  useEffect(() => {
-    (async function () {
-      const response = await fetch(
-        "https://api.inaturalist.org/v1/observations?verifiable=any&user_id=kkarpack&order_by=created_at&locale=en-US&preferred_place_id=1&per_page=50"
-      );
-      const data: INaturalistApiResponse = await response.json();
+  if (loading) {
+    return <>Loading...</>;
+  }
 
-      setObservedSpecies(data.results.flatMap((el) => el.taxon));
-    })();
-  }, []);
+  if (error) {
+    return <>Error: {error.message}</>;
+  }
 
   return (
     <div className={styles.observations}>
-      {observedSpecies.map((el) => {
+      {observations.map((el) => {
         return <Observation key={el.id} species={el} />;
       })}
     </div>
