@@ -12,12 +12,17 @@ const useINaturalistApi = (props: Props) => {
       setLoading(true);
       setError(null);
 
+      const queryProps = { ...props };
+
       // Get the observations from iNaturalist
       const url = new URL("https://api.inaturalist.org/v1/observations");
-      url.searchParams.set("per_page", "10"); // Set a sensible default
 
-      for (const key in props) {
-        url.searchParams.set(key, props[key as keyof Props]);
+      // Set some sensible defaults
+      queryProps.per_page = props.per_page ?? 10;
+      queryProps.rank = ["species"];
+
+      for (const key in queryProps) {
+        url.searchParams.set(key, queryProps[key as keyof Props]);
       }
 
       const response = await window.fetch(url.toString());
