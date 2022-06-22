@@ -1,3 +1,31 @@
 .card {
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.photo {
+  height: 20vmin;
+  background-size: cover;
+  background-color: #fff;
+}
+
+.text {
+  padding: 1em;
+}
+
+.title,
+.subtitle {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden;
+}
+
+.title {
+  text-transform: capitalize;
+}
+
+.subtitle {
+  font-size: 0.9em;
+  opacity: 0.7;
 }
