@@ -3,9 +3,16 @@
 }
 
 .card {
+  display: block;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
   background-color: #fff;
   border-radius: var(--border-radius);
+  text-decoration: none;
+  color: inherit;
+}
+
+.card:hover .photo {
+  filter: brightness(110%) grayscale(40%);
 }
 
 .photo {
@@ -16,6 +23,7 @@
   aspect-ratio: 1;
   border-top-right-radius: var(--border-radius);
   border-top-left-radius: var(--border-radius);
+  transition: all 0.2s ease-in-out;
 }
 
 .text {

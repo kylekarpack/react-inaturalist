@@ -1,10 +1,11 @@
 import { FunctionComponent } from "react";
-import { Taxon } from "../types/inaturalist";
+import { Result } from "../types/inaturalist";
 import styles from "./Observation.module.css";
 
-export const Observation: FunctionComponent<{ species: Taxon }> = ({ species }) => {
+export const Observation: FunctionComponent<{ observation: Result }> = ({ observation }) => {
+  const { taxon: species } = observation;
   return (
-    <div className={styles.card}>
+    <a href={observation.uri} target="_blank" className={styles.card}>
       <div className={styles.photo} style={{ backgroundImage: `url("${species.default_photo?.medium_url}")` }}></div>
       <div className={styles.text}>
         <div>
@@ -12,6 +13,6 @@ export const Observation: FunctionComponent<{ species: Taxon }> = ({ species }) 
         </div>
         <div className={styles.subtitle}>({species.name})</div>
       </div>
-    </div>
+    </a>
   );
 };

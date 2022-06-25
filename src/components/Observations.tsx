@@ -18,7 +18,7 @@ export const Observations: FunctionComponent<Props> = (props) => {
   return (
     <div className={styles.observations}>
       {observations.map((el) => {
-        return <Observation key={el.id} species={el} />;
+        return <Observation key={el.id} observation={el} />;
       })}
     </div>
   );

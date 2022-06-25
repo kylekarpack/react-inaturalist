@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { INaturalistApiResponse, Taxon } from "../types/inaturalist";
+import { INaturalistApiResponse, Result } from "../types/inaturalist";
 import { Props } from "../types/props";
 
 const useINaturalistApi = (props: Props) => {
-  const [observations, setObservations] = useState<Taxon[]>([]);
+  const [observations, setObservations] = useState<Result[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
 
@@ -27,7 +27,7 @@ const useINaturalistApi = (props: Props) => {
 
       const response = await window.fetch(url.toString());
       const data: INaturalistApiResponse = await response.json();
-      setObservations(data.results.flatMap((el) => el.taxon));
+      setObservations(data.results);
     } catch (err: unknown) {
       setError(err as Error);
     } finally {
