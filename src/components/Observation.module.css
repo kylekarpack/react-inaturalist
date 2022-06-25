@@ -57,3 +57,10 @@
   opacity: 0.5;
   font-style: italic;
 }
+
+.time {
+  font-size: 0.6em;
+  margin-top: 1em;
+  opacity: 0.4;
+  text-transform: capitalize;
+}

@@ -8,6 +8,6 @@ const root = createRoot(container);
 root.render(
   <div>
     <h1>React iNaturalist Demo Page</h1>
-    <Observations user_id={["kkarpack"]} per_page={10} />
+    <Observations user_id={["kkarpack"]} per_page={20} />
   </div>
 );

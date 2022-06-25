@@ -19,7 +19,8 @@ const useINaturalistApi = (props: Props) => {
 
       // Set some sensible defaults
       queryProps.per_page = props.per_page ?? 10;
-      queryProps.rank = ["species"];
+      queryProps.rank = queryProps.rank ?? ["species"];
+      queryProps.order_by = queryProps.order_by ?? "observed_on";
 
       for (const key in queryProps) {
         url.searchParams.set(key, queryProps[key as keyof Props]);
