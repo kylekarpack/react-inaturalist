@@ -1,16 +1,25 @@
+:root {
+  --border-radius: 3px;
+}
+
 .card {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
   background-color: #fff;
+  border-radius: var(--border-radius);
 }
 
 .photo {
-  height: 150px;
+  width: 100%;
   background-size: cover;
+  background-position: center;
   background-color: #fff;
+  aspect-ratio: 1;
+  border-top-right-radius: var(--border-radius);
+  border-top-left-radius: var(--border-radius);
 }
 
 .text {
-  padding: 1em;
+  padding: 0.8em 1em;
 }
 
 .title,
@@ -23,9 +32,11 @@
 
 .title {
   text-transform: capitalize;
+  padding-bottom: 0.25em;
 }
 
 .subtitle {
-  font-size: 0.9em;
-  opacity: 0.7;
+  font-size: 0.8em;
+  opacity: 0.5;
+  font-style: italic;
 }
