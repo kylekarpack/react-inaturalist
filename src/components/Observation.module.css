@@ -9,10 +9,11 @@
   border-radius: var(--border-radius);
   text-decoration: none;
   color: inherit;
+  position: relative;
 }
 
-.card:hover .photo {
-  filter: brightness(110%) grayscale(40%);
+.card:hover .overlay {
+  opacity: 1;
 }
 
 .photo {
@@ -26,16 +27,24 @@
   transition: all 0.2s ease-in-out;
 }
 
-.text {
-  padding: 0.8em 1em;
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.2s ease-in-out;
 }
 
-.title,
-.subtitle {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  display: block;
-  overflow: hidden;
+.text {
+  padding: 0.8em 1em;
+  width: 100%;
+  text-align: center;
 }
 
 .title {
