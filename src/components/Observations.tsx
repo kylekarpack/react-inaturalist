@@ -2,7 +2,7 @@ import { FunctionComponent } from "react";
 import useINaturalistApi from "../hooks/useINaturalistApi";
 import { Props } from "../types/props";
 import { Observation } from "./Observation";
-import styles from "./Observations.module.css";
+import * as styles from "./Observations.module.css";
 
 export const Observations: FunctionComponent<Props> = (props) => {
   const { loading, observations, error } = useINaturalistApi(props);
