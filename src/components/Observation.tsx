@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import { Result } from "../types/inaturalist";
-import styles from "./Observation.module.css";
+import * as styles from "./Observation.module.css";
 import { TimeAgo } from "./TimeAgo";
 
 export const Observation: FunctionComponent<{ observation: Result }> = ({ observation }) => {
