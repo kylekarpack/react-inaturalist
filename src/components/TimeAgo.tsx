@@ -27,7 +27,7 @@ const timeAgo = (timestamp: Date) => {
   return value;
 };
 
-export const TimeAgo: FunctionComponent<{ date: Date }> = ({ date }) => {
+export const TimeAgo: FunctionComponent<{ date: Date | string }> = ({ date }) => {
   const time = useMemo(() => timeAgo(new Date(date)), [date]);
   return <>{time}</>;
 };

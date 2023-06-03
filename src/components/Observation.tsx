@@ -21,7 +21,7 @@ export const Observation: FunctionComponent<{ observation: Result }> = ({ observ
             </div>
             <div className={styles.subtitle}>({species.name})</div>
             <div className={styles.time}>
-              <TimeAgo date={observation.observed_on} />
+              <TimeAgo date={observation.observed_on_string} />
             </div>
           </div>
         </div>
