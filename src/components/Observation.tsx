@@ -7,7 +7,12 @@ export const Observation: FunctionComponent<{ observation: Result }> = ({ observ
   const { taxon: species } = observation;
   return (
     <a href={observation.uri} target="_blank" className={styles.card}>
-      <div className={styles.photo} style={{ backgroundImage: `url("${species.default_photo?.medium_url}")` }}></div>
+      <img
+        className={styles.photo}
+        src={species.default_photo?.medium_url}
+        alt={species.preferred_common_name}
+        loading="lazy"
+      />
       <div className={styles.overlay}>
         <div className={styles.text}>
           <div style={{ maxWidth: "100%" }}>
