@@ -36,9 +36,9 @@
     "url": "https://github.com/kylekarpack/react-inaturalist/issues"
   },
   "homepage": "https://github.com/kylekarpack/react-inaturalist#readme",
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+  "peerDependencies": {
+    "react": ">= 17",
+    "react-dom": ">= 17"
   },
   "devDependencies": {
     "@parcel/optimizer-esbuild": "^2.8.2",
