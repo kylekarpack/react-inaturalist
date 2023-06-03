@@ -5,7 +5,6 @@
 .card {
   display: block;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
-  background-color: #fff;
   border-radius: var(--border-radius);
   text-decoration: none;
   color: inherit;
@@ -16,15 +15,23 @@
   opacity: 1;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .photo {
   width: 100%;
-  background-size: cover;
-  background-position: center;
-  background-color: #fff;
+  object-fit: cover;
   aspect-ratio: 1;
   border-top-right-radius: var(--border-radius);
   border-top-left-radius: var(--border-radius);
   transition: all 0.2s ease-in-out;
+  animation: fadeIn ease-in-out 0.75s;
 }
 
 .overlay {
@@ -34,11 +41,19 @@
   right: 0;
   bottom: 0;
   background-color: rgba(255, 255, 255, 0.85);
+  color: #222;
   opacity: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: opacity 0.2s ease-in-out;
+}
+
+@media (prefers-color-scheme: dark) {
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #ddd;
+  }
 }
 
 .text {

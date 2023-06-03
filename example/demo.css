@@ -1,0 +1,11 @@
+html {
+  background: #eee;
+  font-family: sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background: #222;
+    color: #eee;
+  }
+}
