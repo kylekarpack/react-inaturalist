@@ -11,7 +11,7 @@ root.render(
     <h1>React iNaturalist Demo Page</h1>
     <Observations
       user_id={["kkarpack"]}
-      per_page={12}
+      per_page={16}
       order_by="observed_on"
       order="desc"
       rank={["species", "hybrid"]}
