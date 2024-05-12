@@ -9,6 +9,13 @@ const root = createRoot(container!);
 root.render(
   <div>
     <h1>React iNaturalist Demo Page</h1>
-    <Observations user_id={["kkarpack"]} per_page={50} />
+    <Observations
+      user_id={["kkarpack"]}
+      per_page={12}
+      order_by="observed_on"
+      order="desc"
+      rank={["species", "hybrid"]}
+      without_taxon_id={[47158]} /* Exclude insects */
+    />
   </div>
 );
