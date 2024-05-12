@@ -20,7 +20,6 @@
     "prepublish": "npm run build",
     "lint": "gts lint src/**/*.{ts,tsx}",
     "clean": "gts clean",
-    "compile": "tsc",
     "fix": "gts fix",
     "release": "release-it",
     "prepare": "npm run compile",

@@ -28,7 +28,7 @@ export interface Props {
    * Attribute fields to return in the response
    * @example species_guess,observed_on
    */
-  fields?: any;
+  fields?: unknown;
   geo?: boolean;
   geoprivacy?: ("obscured" | "obscured_private" | "open" | "private")[];
   hrank?: (

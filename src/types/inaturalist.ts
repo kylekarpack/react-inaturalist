@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 export interface INaturalistApiResponse {
   total_results: number;
   page: number;
