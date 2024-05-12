@@ -22,7 +22,10 @@
     "clean": "gts clean",
     "compile": "tsc",
     "fix": "gts fix",
-    "release": "release-it"
+    "release": "release-it",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -45,14 +48,14 @@
     "@parcel/optimizer-esbuild": "^2.12.0",
     "@parcel/packager-ts": "^2.12.0",
     "@parcel/transformer-typescript-types": "^2.12.0",
+    "@types/node": "20.11.5",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
-    "gts": "^3.1.0",
+    "gts": "^5.3.0",
     "http-server": "^14.1.1",
     "parcel": "^2.12.0",
-    "prettier": "^2.7.1",
     "process": "^0.11.10",
     "release-it": "^17.2.1",
-    "typescript": "^5.4.5"
+    "typescript": "~5.4.3"
   }
 }

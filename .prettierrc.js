@@ -1,4 +1,5 @@
 module.exports = {
+  ...require('gts/.prettierrc.json'),
   bracketSpacing: true,
   semi: true,
   arrowParens: "always",
@@ -7,4 +8,4 @@ module.exports = {
   printWidth: 120,
   useTabs: false,
   tabWidth: 2
-};
+}
