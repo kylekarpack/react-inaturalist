@@ -19,7 +19,6 @@
     "serve": "npm run build && http-server ./dist",
     "prepublish": "npm run build",
     "lint": "gts lint src/**/*.{ts,tsx}",
-    "clean": "gts clean",
     "fix": "gts fix",
     "release": "release-it",
     "prepare": "npm run compile",
